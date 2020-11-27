@@ -18,6 +18,15 @@ The default OS is the ubuntu. To run with different OSes:
     docker run --rm -ti boltops/terraspace:amzn2
     docker run --rm -ti boltops/terraspace:ubuntu
 
+## Updating Images
+
+The Docker images are built daily. So remember to update the cached Docker images if you've pulled them before:
+
+    docker pull boltops/terraspace
+    docker pull boltops/terraspace:alpine
+    docker pull boltops/terraspace:amzn2
+    docker pull boltops/terraspace:ubuntu
+
 ## Using Credentials in Docker Container
 
 You probably want to test your cloud credentials. One way to do this is to mount your credentials as a volume. Example:
