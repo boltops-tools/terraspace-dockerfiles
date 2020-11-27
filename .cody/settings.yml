@@ -1,0 +1,9 @@
+base:
+  # stack_naming:
+  #   append_env: true # default false
+
+development:
+  aws_profile: <%= ENV['TS_DOCKER_AWS_PROFILE'] || 'tung' %>
+
+production:
+  aws_profile: bolt-prod
