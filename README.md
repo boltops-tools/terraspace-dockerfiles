@@ -2,7 +2,7 @@
 
 [![BoltOps Badge](https://img.boltops.com/boltops/badges/boltops-badge.png)](https://www.boltops.com)
 
-This repo contains Dockerfiles that build [Terraspace](https://terraspace.cloud/). You can use it try out Terraspace within an isolated Docker container.
+This repo contains Dockerfiles that include [Terraspace](https://terraspace.cloud/). You can use it try out Terraspace within an isolated Docker container.
 
 The Docker images are published to Dockerhub daily. The image includes the latest version of Terraspace and Terraform.
 
