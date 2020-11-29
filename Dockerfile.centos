@@ -1,0 +1,19 @@
+FROM centos
+
+RUN yum install -y git unzip
+
+WORKDIR /tmp
+COPY bin/install/terraform.sh bin/install/terraform.sh
+RUN bin/install/terraform.sh
+
+RUN curl -so /etc/yum.repos.d/boltops.repo https://yum.boltops.com/boltops.repo
+RUN rpm --import https://yum.boltops.com/boltops-key.public
+RUN yum install -y terraspace
+
+COPY bin/install/awscli.sh bin/install/awscli.sh
+RUN bin/install/awscli.sh
+
+WORKDIR /root
+ENV PATH="/root/.tfenv/bin:$PATH"
+
+ENTRYPOINT ["/bin/bash"]
