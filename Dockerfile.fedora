@@ -1,0 +1,18 @@
+FROM fedora
+
+RUN dnf install -y git unzip findutils libxcrypt-compat
+
+WORKDIR /tmp
+COPY bin/install/terraform.sh bin/install/terraform.sh
+RUN bin/install/terraform.sh
+
+RUN curl -so /etc/yum.repos.d/boltops.repo https://yum.boltops.com/boltops.repo
+RUN rpm --import https://yum.boltops.com/boltops-key.public
+RUN dnf install -y terraspace
+
+RUN dnf install awscli -y
+
+WORKDIR /root
+ENV PATH="/root/.tfenv/bin:$PATH"
+
+ENTRYPOINT ["/bin/bash"]
