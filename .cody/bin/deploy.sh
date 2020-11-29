@@ -2,4 +2,5 @@
 
 set -eux
 os=$1
-cody deploy terraspace-dockerfiles-$os
+shift # remove os
+cody deploy terraspace-dockerfiles-$os "$@"
