@@ -16,6 +16,9 @@ The default OS is the ubuntu. To run with different OSes:
 
     docker run --rm -ti boltops/terraspace:alpine
     docker run --rm -ti boltops/terraspace:amzn2
+    docker run --rm -ti boltops/terraspace:centos
+    docker run --rm -ti boltops/terraspace:debian
+    docker run --rm -ti boltops/terraspace:fedora
     docker run --rm -ti boltops/terraspace:ubuntu
 
 ## Updating Images
@@ -25,6 +28,9 @@ The Docker images are built daily. So remember to update the cached Docker image
     docker pull boltops/terraspace
     docker pull boltops/terraspace:alpine
     docker pull boltops/terraspace:amzn2
+    docker pull boltops/terraspace:centos
+    docker pull boltops/terraspace:debian
+    docker pull boltops/terraspace:fedora
     docker pull boltops/terraspace:ubuntu
 
 ## Run Terraspace in Docker Container
