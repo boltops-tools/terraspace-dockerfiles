@@ -6,6 +6,8 @@ This repo contains Dockerfiles that include [Terraspace](https://terraspace.clou
 
 The Docker images are published to Dockerhub daily. The images generally include the latest version of Terraspace and Terraform.
 
+For more docs, see: [Terraspace Docker Docs](https://terraspace.cloud/docs/install/docker/)
+
 ## Usage
 
 To run the terraspace docker container:
