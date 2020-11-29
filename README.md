@@ -27,7 +27,7 @@ The Docker images are built daily. So remember to update the cached Docker image
     docker pull boltops/terraspace:amzn2
     docker pull boltops/terraspace:ubuntu
 
-## Using Credentials in Docker Container
+## Run Terraspace in Docker Container
 
 You probably want to test your cloud credentials. One way to do this is to mount your credentials as a volume. Example:
 

@@ -8,7 +8,6 @@ phases:
       ruby: latest
   build:
     commands:
-      - bin/build.sh ubuntu
-      - bin/push.sh ubuntu
-      - docker tag $DOCKER_ORG/terraspace:ubuntu $DOCKER_ORG/terraspace:latest
-      - docker push $DOCKER_ORG/terraspace:latest
+      - bin/build.sh $OS
+      - bin/push.sh $OS
+      - bin/push-latest.sh $OS
