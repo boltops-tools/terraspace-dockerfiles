@@ -6,6 +6,8 @@ phases:
   install:
     runtime-versions:
       ruby: latest
+    commands:
+      - bin/install/awscli.sh
   build:
     commands:
       - bin/build.sh $OS
