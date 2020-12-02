@@ -6,4 +6,5 @@ environment_variables(
   DOCKER_PASS: ssm("/terraspace-dockerfiles/#{Cody.env}/docker_pass"),
   DOCKER_ORG: ssm("/terraspace-dockerfiles/#{Cody.env}/docker_org"),
   ECR_REPO: ssm("/terraspace-dockerfiles/#{Cody.env}/ecr_repo"),
+  CODY_ENV: Cody.env,
 )
