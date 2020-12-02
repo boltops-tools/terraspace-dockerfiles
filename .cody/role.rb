@@ -1,1 +1,1 @@
-iam_policy("ecr-public", "logs", "ssm", "sts")
+iam_policy("ecr", "ecr-public", "logs", "ssm", "sts")

@@ -10,6 +10,8 @@ TOKEN=$(curl -s --user "$DOCKER_USER:$DOCKER_PASS" "https://auth.docker.io/token
 echo "Current rate limit:"
 curl -s --head -H "Authorization: Bearer $TOKEN" https://registry-1.docker.io/v2/ratelimitpreview/test/manifests/latest
 
-# AWS ECR Public Repo
-aws --version
+# AWS ECR Public Repo - for development
+ECR_DOMAIN=$(echo $ECR_REPO | sed 's/\/.*//')
+aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin $ECR_DOMAIN
+# AWS ECR Public Repo - for production
 aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws
