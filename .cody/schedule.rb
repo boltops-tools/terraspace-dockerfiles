@@ -1,1 +1,2 @@
-cron("0 12 * * ? *") # Run at 12:00 pm (UTC) every day
+# Run at 12:00 pm (UTC) every day
+cron("0 12 * * ? *") unless Cody.env == "development"

@@ -7,5 +7,13 @@ if [ "$os" != "ubuntu" ]; then
 fi
 
 set -x
-docker tag $DOCKER_ORG/terraspace:ubuntu $DOCKER_ORG/terraspace:latest
-docker push $DOCKER_ORG/terraspace:latest
+
+DOCKERHUB_TAG=$DOCKER_ORG/terraspace:ubuntu
+DOCKERHUB_LATEST=$DOCKER_ORG/terraspace:latest
+ECR=$ECR_REPO:latest
+
+docker tag $DOCKERHUB_TAG $DOCKERHUB_LATEST
+docker push $DOCKERHUB_LATEST
+
+docker tag $DOCKERHUB_TAG $ECR_LATEST
+docker push $ECR_LATEST

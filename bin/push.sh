@@ -6,4 +6,10 @@ os=$1
 
 bin/login.sh
 
-docker push $DOCKER_ORG/terraspace:$os
+DOCKERHUB=$DOCKER_ORG/terraspace:$os
+ECR=$ECR_REPO:$os
+
+docker push $DOCKERHUB
+
+docker tag $DOCKERHUB $ECR
+docker push $ECR
