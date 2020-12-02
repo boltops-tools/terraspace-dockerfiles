@@ -8,12 +8,12 @@ fi
 
 set -x
 
-DOCKERHUB_TAG=$DOCKER_ORG/terraspace:ubuntu
-DOCKERHUB_LATEST=$DOCKER_ORG/terraspace:latest
+OS_TAG=$DOCKER_ORG/terraspace:ubuntu
+DOCKERHUB=$DOCKER_ORG/terraspace:latest
 ECR=$ECR_REPO:latest
 
-docker tag $DOCKERHUB_TAG $DOCKERHUB_LATEST
-docker push $DOCKERHUB_LATEST
+docker tag $OS_TAG $DOCKERHUB
+docker push $DOCKERHUB
 
-docker tag $DOCKERHUB_TAG $ECR_LATEST
-docker push $ECR_LATEST
+docker tag $OS_TAG $ECR
+docker push $ECR
