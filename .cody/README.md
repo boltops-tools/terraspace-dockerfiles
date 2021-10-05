@@ -29,9 +29,12 @@ Wrapper script:
 
 To start a CodeBuild build:
 
-    CODY_ENV=production cody start terraspace-dockerfiles-alpine
-    CODY_ENV=production cody start terraspace-dockerfiles-amzn2
-    CODY_ENV=production cody start terraspace-dockerfiles-ubuntu
+    CODY_ENV=production cody start terraspace-dockerfiles-alpine --no-wait
+    CODY_ENV=production cody start terraspace-dockerfiles-amzn2  --no-wait
+    CODY_ENV=production cody start terraspace-dockerfiles-centos --no-wait
+    CODY_ENV=production cody start terraspace-dockerfiles-debian --no-wait
+    CODY_ENV=production cody start terraspace-dockerfiles-fedora --no-wait
+    CODY_ENV=production cody start terraspace-dockerfiles-ubuntu --no-wait
 
 Wrapper script:
 

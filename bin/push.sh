@@ -11,5 +11,6 @@ ECR=$ECR_REPO:$os
 
 docker push $DOCKERHUB
 
-docker tag $DOCKERHUB $ECR
-docker push $ECR
+# disable ECR push for now, until cleanup script
+# docker tag $DOCKERHUB $ECR
+# docker push $ECR
