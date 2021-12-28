@@ -1,16 +1,22 @@
-FROM fedora
-
-RUN dnf install -y git unzip findutils libxcrypt-compat
+FROM fedora:34
+# FROM fedora
+# fedora:latest is fedora:36 but having trouble with dns with it. fedora:34 is working.
 
 WORKDIR /tmp
+
+RUN dnf install -y git unzip findutils libxcrypt-compat file
+
 COPY bin/install/terraform.sh bin/install/terraform.sh
 RUN bin/install/terraform.sh
+COPY bin/install/awscli.sh bin/install/awscli.sh
+RUN bin/install/awscli.sh
 
-RUN curl -so /etc/yum.repos.d/boltops.repo https://yum.boltops.com/boltops.repo
-RUN rpm --import https://yum.boltops.com/boltops-key.public
-RUN dnf install -y terraspace
+RUN curl -so /etc/yum.repos.d/boltops.repo https://yum.tung.boltops.com/boltops.repo
+RUN rpm --import https://yum.tung.boltops.com/boltops-key.public
 
-RUN dnf install awscli -y
+ARG PACKAGE_VERSION=latest
+COPY bin/install/terraspace/dnf.sh bin/install/terraspace/dnf.sh
+RUN bin/install/terraspace/dnf.sh
 
 WORKDIR /root
 ENV PATH="/root/.tfenv/bin:$PATH"
