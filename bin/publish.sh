@@ -18,7 +18,7 @@ set -u
 DOCKER_LATEST=$DOCKER_ORG/terraspace:$OS
 docker build $BUILD_ARG -t $DOCKER_LATEST -f Dockerfile.$OS .
 
-DOCKER_TAG=$DOCKER_ORG/terraspace:$OS-$PACKAGE_VERSION
+DOCKER_TAG=$DOCKER_ORG/terraspace:$PACKAGE_VERSION-$OS
 docker tag $DOCKER_LATEST $DOCKER_TAG
 
 # Push OS tagged version and latest
@@ -36,9 +36,11 @@ if [ "$OS" != "ubuntu" ]; then
 fi
 
 UBUNTU_TAG=$DOCKER_ORG/terraspace:ubuntu
+MAIN_DOCKER_TAG=$DOCKER_ORG/terraspace:$PACKAGE_VERSION
 MAIN_DOCKER_LATEST=$DOCKER_ORG/terraspace:latest
 
 docker tag $UBUNTU_TAG $MAIN_DOCKER_LATEST
+docker push $MAIN_DOCKER_TAG
 docker push $MAIN_DOCKER_LATEST
 
 # disable ECR push for now, until cleanup script
