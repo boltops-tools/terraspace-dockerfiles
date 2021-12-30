@@ -10,8 +10,8 @@ RUN bin/install/terraform.sh
 COPY bin/install/awscli.sh bin/install/awscli.sh
 RUN bin/install/awscli.sh
 
-RUN echo "deb https://apt.tung.boltops.com stable main" > /etc/apt/sources.list.d/boltops.list
-RUN curl -s https://apt.tung.boltops.com/boltops-key.public | apt-key add -
+RUN echo "deb https://apt.boltops.com stable main" > /etc/apt/sources.list.d/boltops.list
+RUN curl -s https://apt.boltops.com/boltops-key.public | apt-key add -
 
 ARG PACKAGE_VERSION=latest
 COPY bin/install/terraspace/apt.sh bin/install/terraspace/apt.sh
