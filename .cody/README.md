@@ -16,14 +16,9 @@ To update the CodeBuild projects:
     CODY_ENV=production cody deploy terraspace-dockerfiles-amzn2
     CODY_ENV=production cody deploy terraspace-dockerfiles-ubuntu
 
-Wrapper script:
+Wrapper script to deploy all:
 
-    CODY_ENV=production .cody/bin/deploy.sh alpine
-    CODY_ENV=production .cody/bin/deploy.sh amzn2
-    CODY_ENV=production .cody/bin/deploy.sh centos
-    CODY_ENV=production .cody/bin/deploy.sh debian
-    CODY_ENV=production .cody/bin/deploy.sh fedora
-    CODY_ENV=production .cody/bin/deploy.sh ubuntu
+    CODY_ENV=production .cody/bin/deploy-all.sh
 
 ## Start a Build
 

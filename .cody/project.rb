@@ -7,4 +7,7 @@ environment_variables(
   DOCKER_ORG: ssm("/terraspace-dockerfiles/#{Cody.env}/docker_org"),
   ECR_REPO: ssm("/terraspace-dockerfiles/#{Cody.env}/ecr_repo"),
   CODY_ENV: Cody.env,
+  # for bin/write_package_version.sh
+  APT_S3_BUCKET: ssm("/terraspace-dockerfiles/#{Cody.env}/apt_s3_bucket"),
+  YUM_S3_BUCKET: ssm("/terraspace-dockerfiles/#{Cody.env}/yum_s3_bucket"),
 )

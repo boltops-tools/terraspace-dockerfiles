@@ -1,7 +1,10 @@
-FROM ruby:2.7.2-alpine3.12
+FROM ruby:3.0.3-alpine3.15
 
 RUN apk add ruby-unf_ext cmake build-base git terraform aws-cli
 
-RUN gem install terraspace
+WORKDIR /tmp
+ARG PACKAGE_VERSION=latest
+COPY bin/install/terraspace/gem.sh bin/install/terraspace/gem.sh
+RUN bin/install/terraspace/gem.sh
 
 ENTRYPOINT ["/bin/sh"]
