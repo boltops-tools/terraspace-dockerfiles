@@ -1,5 +1,10 @@
 FROM centos
 
+# Thanks: https://stackoverflow.com/a/70932217
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-Linux-* &&\
+    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-Linux-*
+RUN yum upgrade -y
+
 RUN yum install -y git unzip file
 
 WORKDIR /tmp
