@@ -1,3 +1,4 @@
+.cody/output
 *.metadata.json
 env.dev
 package_version.txt

@@ -12,34 +12,34 @@ For more docs, see: [Terraspace Docker Docs](https://terraspace.cloud/docs/insta
 
 To run the terraspace docker container:
 
-    docker run --rm -ti boltops/terraspace
+    docker run --rm -ti ghcr.io/boltops-tools/terraspace
 
 The default OS is the ubuntu. To run with different OSes:
 
-    docker run --rm -ti boltops/terraspace:alpine
-    docker run --rm -ti boltops/terraspace:amzn2
-    docker run --rm -ti boltops/terraspace:centos
-    docker run --rm -ti boltops/terraspace:debian
-    docker run --rm -ti boltops/terraspace:fedora
-    docker run --rm -ti boltops/terraspace:ubuntu
+    docker run --rm -ti ghcr.io/boltops-tools/terraspace:alpine
+    docker run --rm -ti ghcr.io/boltops-tools/terraspace:amzn2
+    docker run --rm -ti ghcr.io/boltops-tools/terraspace:centos
+    docker run --rm -ti ghcr.io/boltops-tools/terraspace:debian
+    docker run --rm -ti ghcr.io/boltops-tools/terraspace:fedora
+    docker run --rm -ti ghcr.io/boltops-tools/terraspace:ubuntu
 
 ## Updating Images
 
 The Docker images are built daily. So remember to update the cached Docker images if you've pulled them before:
 
-    docker pull boltops/terraspace
-    docker pull boltops/terraspace:alpine
-    docker pull boltops/terraspace:amzn2
-    docker pull boltops/terraspace:centos
-    docker pull boltops/terraspace:debian
-    docker pull boltops/terraspace:fedora
-    docker pull boltops/terraspace:ubuntu
+    docker pull ghcr.io/boltops-tools/terraspace
+    docker pull ghcr.io/boltops-tools/terraspace:alpine
+    docker pull ghcr.io/boltops-tools/terraspace:amzn2
+    docker pull ghcr.io/boltops-tools/terraspace:centos
+    docker pull ghcr.io/boltops-tools/terraspace:debian
+    docker pull ghcr.io/boltops-tools/terraspace:fedora
+    docker pull ghcr.io/boltops-tools/terraspace:ubuntu
 
 ## Run Terraspace in Docker Container
 
 You probably want to test your cloud credentials. One way to do this is to mount your credentials as a volume. Example:
 
-    docker run --rm -ti -v $HOME/.aws:/root/.aws boltops/terraspace:ubuntu
+    docker run --rm -ti -v $HOME/.aws:/root/.aws ghcr.io/boltops-tools/terraspace:ubuntu
 
 From there, you probably want to export your AWS_PROFILE.
 
@@ -53,13 +53,13 @@ env.dev
 
 Then to use the env file:
 
-    docker run --rm -ti --env-file env.dev -v $HOME/.aws:/root/.aws boltops/terraspace:ubuntu
+    docker run --rm -ti --env-file env.dev -v $HOME/.aws:/root/.aws ghcr.io/boltops-tools/terraspace:ubuntu
 
 ## Test Terraspace
 
 Here are some quick-start example commands to test out terraspace.
 
-    >>> docker run --rm -ti --env-file env.dev -v $HOME/.aws:/root/.aws boltops/terraspace:ubuntu
+    >>> docker run --rm -ti --env-file env.dev -v $HOME/.aws:/root/.aws ghcr.io/boltops-tools/terraspace:ubuntu
     terraspace new project infra --examples
     cd infra
     terraspace up demo -y

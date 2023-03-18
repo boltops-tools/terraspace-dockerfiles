@@ -12,9 +12,9 @@ This installs the `cody` command to manage the AWS CodeBuild project.
 
 To update the CodeBuild projects:
 
-    CODY_ENV=production cody deploy terraspace-dockerfiles-alpine
-    CODY_ENV=production cody deploy terraspace-dockerfiles-amzn2
-    CODY_ENV=production cody deploy terraspace-dockerfiles-ubuntu
+    CODY_ENV=production cody up terraspace-dockerfiles-alpine
+    CODY_ENV=production cody up terraspace-dockerfiles-amzn2
+    CODY_ENV=production cody up terraspace-dockerfiles-ubuntu
 
 Wrapper script to deploy all:
 
